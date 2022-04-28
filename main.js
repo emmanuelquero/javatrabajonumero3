@@ -1,3 +1,5 @@
+let a = new Date ();
+console.log (a)
 class   Producto {
     constructor (nombre, precio) {
         this.nombre = nombre.toUpperCase();
@@ -53,20 +55,27 @@ tipos.push ("4x4", "Cuatriciclos")
 //console.log(tipos)
 tipos.pop ()
 console.table (tipos)
-console.log(tipos.join(`,`))
+console.table (tipos.join(`,`))
 console.groupEnd ()
 console.group("Metodo concat")
 const colores = ["Azul", "Blanco", "Negro", "Gris"]
 const mix = tipos.concat (colores)
-console.log("Mix: "+mix)
-console.log("colores que hay:" +colores)
-console.log("tipos: "+tipos)
+console.table ("Mix: "+mix)
+console.table ("colores que hay:" +colores)
+console.table ("tipos: "+tipos)
 console.groupEnd()
 console.group("Metodo Slice")
 const otro = tipos.slice(1,3)
-console.log(otro)
+console.table(otro)
 console.groupEnd()
 console.group("INDEXOF")
 console.log(colores.indexOf("Azul"))
 console.log(colores.indexOf("naranja"))
 console.groupEnd()
+
+const nuevosproductos = [
+{nombre: "Volskwagen Gol", precio: 1500000, color: negro},
+{nombre: "Ford Sierra", precio: 100000, color: verde},
+{nombre: "Volskwagen Amarok", precio: 5000050, color: gris},
+{nombre: "Ford EcoSport", precio: 3000000, color: blanco}
+]
