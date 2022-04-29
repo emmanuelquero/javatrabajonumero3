@@ -73,9 +73,54 @@ console.log(colores.indexOf("Azul"))
 console.log(colores.indexOf("naranja"))
 console.groupEnd()
 
-const nuevosproductos = [
-{nombre: "Volskwagen Gol", precio: 1500000, color: negro},
-{nombre: "Ford Sierra", precio: 100000, color: verde},
-{nombre: "Volskwagen Amarok", precio: 5000050, color: gris},
-{nombre: "Ford EcoSport", precio: 3000000, color: blanco}
+const nuevosproductos = ["FiatPalio", "FordFiesta", "VolskwagenGol", "FiatTipo", "ChevroletCorsa"]
+
+nuevosproductos.forEach ((autos) =>{
+    if (autos === "FordFiesta"){
+        console.log ("Ese auto esta disponible")
+    }
+})
+nuevosproductos.forEach ((autos) =>{
+    if (autos === "FordFocus"){
+        console.log ("Ese auto no esta disponible")
+    }else {
+        console.log ("No tenemos lo que estas buscando")
+    }
+})
+
+console.group("Metodo some")
+const informacion = [
+    {nombre: "FiatPalio", precio: 1500000},
+    {nombre: "FordFiesta", precio: 2500000},
+    {nombre: "FiatTipo", precio: 3500000},
+    {nombre: "ChevroletCorsa", precio: 1000000}
 ]
+console.table(informacion)
+const existen = informacion.some(item => item.nombre = "FiatTipo")
+console.log(existen)
+
+const e = informacion.some (item => item.precio > 2000000);
+console.log (e)
+
+colores.forEach((coloress, index) => {
+    if (coloress === "Azul") {
+        console.log (`Encontraste el color en el indice ${index}`)
+    }
+})
+
+let total = 0;
+informacion.forEach ((informacion) => {
+    total += informacion.precio
+    console.log (`El total de todos los productos sumados es:${total}`)
+})
+console.groupEnd()
+console.group("Carrito")
+
+let carrito = informacion.reduce ((total,item)=> total += item.precio, 0)
+console.log (carrito)
+ let res = informacion.filter (item=> item.precio>2500000)
+ console.log (res)
+ console.groupEnd()
+ console.group ("Ventas")
+ let autosImpuestos = informacion.map (item=> item.precio + (item.precio*1.21))
+ console.log (autosImpuestos)
